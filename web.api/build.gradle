@@ -1,0 +1,35 @@
+//buildscript {
+//    ext {
+//        springBootVersion = '2.0.4.RELEASE'
+//    }
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//    }
+//}
+
+
+apply plugin: 'war'
+
+group = 'kr.youngjinguy.spring.gradle'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+war {
+    baseName = 'web.api'
+    version = '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile project(':common')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compileOnly('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

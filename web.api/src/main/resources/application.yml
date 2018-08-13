@@ -1,0 +1,19 @@
+#공통부분
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  jackson:
+    deserialization:
+      accept-empty-string-as-null-object: true
+    serialization:
+      write-dates-as-timestamps: false
+  h2:
+    console:
+      enabled: true
+  datasource:
+    initialize: false
+#    url: jdbc:mysql://localhost/Test_DB
